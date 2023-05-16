@@ -71,18 +71,6 @@ body{
     margin-bottom: 50px;
     margin-right: 10px;
 }
-.login{
-    background-color: aliceblue;
-    display: block;
-    place-items: center;
-    align-items: center;
-    position: relative;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: inset;
-    margin-top: 30vh;
-    size: 50vh;
-}
 
 
 

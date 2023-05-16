@@ -55,7 +55,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Nunca Compartilhe seus dados com ninguém.</div>
+            <div id="emailHelp" class="form-text">Nunca compartilhe seus dados com ninguém</div>
             </div>
             <div class="mb-3">
             <label for="senha" class="form-label">Senha</label>
