@@ -9,7 +9,7 @@
         $p1 = new Evento();
         $p1->setNome($nome);
         $p1->setData($data);
-        $p1->setValor_fotos($valor_fotos);
+        $p1->setValorFotos($valor_fotos);
 
         //conectar com o banco de dados 
         $servername = "localhost";
