@@ -1,10 +1,37 @@
-<!doctype html>
+<?php
+        //pegar os dados do formulário
+        $nome = $_POST['nome'];
+        $data = $_POST['data'];
+        $valor_fotos = $_POST['valor_fotos'];
+
+        //criar o objeto $p1
+        include './Eventos.php';
+        $p1 = new Evento();
+        $p1->setNome($nome);
+        $p1->setData($data);
+        $p1->setValorFotos($valor_fotos);
+
+        //conectar com o banco de dados 
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "test";
+
+        try {
+            $conexao = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $conexao->prepare("INSERT INTO Eventos (nome, data, valor_fotos) VALUES (?, ?, ?)");
+
+            if ($stmt->execute(array($p1->getNome(), $p1->getData(),$p1->getValorFotos()))) {
+                echo 
+' <!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fotografia Esportiva</title>
-    <link rel="stylesheet" href="CSS\style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   </head>
   <body>
@@ -99,3 +126,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>
+';
+        }
+        
+        } catch (PDOException $e) {
+            echo $sql . "<br>" . $e->getMessage();
+        }
+//limpar a conexão
+        $conn = null;
+        ?>
