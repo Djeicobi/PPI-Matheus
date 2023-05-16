@@ -19,6 +19,6 @@ body{
     position: relative;
     padding: 15px;
     border-radius: 12px;
-    box-shadow: inset;
     margin-top: 30vh;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
 }
