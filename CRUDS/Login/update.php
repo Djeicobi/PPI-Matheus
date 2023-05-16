@@ -1,4 +1,4 @@
-<?php
+      <?php
         //pegar os dados do formulário
         $ID_Evento = $_POST['ID_Evento'];
         $nome = $_POST['nome'];
