@@ -70,6 +70,14 @@ body{
 .card{
     margin-bottom: 50px;
     margin-right: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
 }
+.notindex{
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.85));
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+
 
 

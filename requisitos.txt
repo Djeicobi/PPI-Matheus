@@ -1,0 +1,1 @@
+solicitar login quando o usuario tentar adicionar um item no carrinho sem uma sessão;
